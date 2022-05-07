@@ -1,9 +1,5 @@
-import HelloWorld from '../components/hello-world'
+const Home = () => {
+  return <div>Home</div>;
+};
 
-export default function Home() {
-  return (
-    <div className="app">
-      <HelloWorld />
-    </div>
-  )
-}
+export default Home;
