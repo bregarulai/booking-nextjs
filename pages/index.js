@@ -1,10 +1,13 @@
-import { Header, Navbar } from '../components';
+import { Featured, Header, Navbar } from '../components';
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Header />
+      <div className='home__container'>
+        <Featured />
+      </div>
     </div>
   );
 };
