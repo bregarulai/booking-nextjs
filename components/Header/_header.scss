@@ -79,4 +79,9 @@
         color: $color-gray-light;
         cursor: pointer;
     }
+
+    &__date {
+        position: absolute;
+        top: 4.7rem;
+    }
 }
