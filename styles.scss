@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @import './styles/abstract/variables';
-@import './styles/containers/home';
 @import './styles//base/base';
 @import './styles//base/typography';
+@import './styles/containers/home';
 @import './styles/containers/hotels';
 @import './styles/containers/hotel';
 @import './components/Navbar/navbar';
@@ -13,3 +13,4 @@
 @import './components//Featured/featured';
 @import './components//PropertyList/propertyList';
 @import './components//FeaturedProperties/featuredProperties';
+@import './components//Maillist/mailList';
