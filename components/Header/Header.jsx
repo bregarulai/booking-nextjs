@@ -26,6 +26,17 @@ const Header = () => {
     children: 0,
     room: 1,
   });
+
+  const handleOption = (option, operation) => {
+    setOptions((prevOptions) => {
+      return {
+        ...prevOptions,
+        [option]:
+          operation === 'inc' ? options[option] + 1 : options[option] - 1,
+      };
+    });
+  };
+
   return (
     <div className='header'>
       <div className='header__container'>
@@ -102,21 +113,66 @@ const Header = () => {
               <div className='header__options'>
                 <div className='header__options-item'>
                   <span className='header__option-text'>Adult</span>
-                  <button className='header__option-button'>-</button>
-                  <span className='header__option-counter'>0</span>
-                  <button className='header__option-button'>+</button>
+                  <div className='header__counter-container'>
+                    <button
+                      disabled={options.adult <= 1}
+                      className='header__option-button'
+                      onClick={() => handleOption('adult', 'dec')}
+                    >
+                      -
+                    </button>
+                    <span className='header__option-counter'>
+                      {options.adult}
+                    </span>
+                    <button
+                      className='header__option-button'
+                      onClick={() => handleOption('adult', 'inc')}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
                 <div className='header__options-item'>
                   <span className='header__option-text'>Children</span>
-                  <button className='header__option-button'>-</button>
-                  <span className='header__option-counter'>0</span>
-                  <button className='header__option-button'>+</button>
+                  <div className='header__counter-container'>
+                    <button
+                      disabled={options.children <= 0}
+                      className='header__option-button'
+                      onClick={() => handleOption('children', 'dec')}
+                    >
+                      -
+                    </button>
+                    <span className='header__option-counter'>
+                      {options.children}
+                    </span>
+                    <button
+                      className='header__option-button'
+                      onClick={() => handleOption('children', 'inc')}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
                 <div className='header__options-item'>
                   <span className='header__option-text'>Room</span>
-                  <button className='header__option-button'>-</button>
-                  <span className='header__option-counter'>0</span>
-                  <button className='header__option-button'>+</button>
+                  <div className='header__counter-container'>
+                    <button
+                      disabled={options.room <= 1}
+                      className='header__option-button'
+                      onClick={() => handleOption('room', 'dec')}
+                    >
+                      -
+                    </button>
+                    <span className='header__option-counter'>
+                      {options.room}
+                    </span>
+                    <button
+                      className='header__option-button'
+                      onClick={() => handleOption('room', 'inc')}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
