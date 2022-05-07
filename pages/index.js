@@ -1,6 +1,7 @@
 import {
   Featured,
   FeaturedProperties,
+  Footer,
   Header,
   MailList,
   Navbar,
@@ -19,6 +20,7 @@ const Home = () => {
         <h1 className='home__title'>Home guests love</h1>
         <FeaturedProperties />
         <MailList />
+        <Footer />
       </div>
     </div>
   );
