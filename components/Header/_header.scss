@@ -9,6 +9,10 @@
         width: 100%;
         max-width: $container-max-width;
         margin: 2rem 0 10rem 0;
+
+        &--hotels {
+            margin: 2rem 0 0 0;
+        }
     }
 
     &__list {
