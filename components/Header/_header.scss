@@ -1,0 +1,29 @@
+.header {
+    background-color: $color-primary;
+    color: $color-white;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        width: 100%;
+        max-width: $container-max-width;
+        margin: 2rem 0 10rem 0;
+    }
+
+    &__list {
+        display: flex;
+        gap: 4rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &--active {
+            border: 1px solid $color-white;
+            padding: 1rem;
+            border-radius: 2.5rem;
+        }
+    }
+}
