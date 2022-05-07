@@ -65,6 +65,9 @@ const Header = () => {
               2 adults 2 children 1 room
             </span>
           </div>
+          <div className='header__search-item'>
+            <button className='header__button'>Search</button>
+          </div>
         </div>
       </div>
     </div>

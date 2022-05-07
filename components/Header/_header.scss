@@ -3,6 +3,7 @@
     color: $color-white;
     display: flex;
     justify-content: center;
+    position: relative;
 
     &__container {
         width: 100%;
@@ -36,9 +37,46 @@
         background-color: $color-primary-light;
         color: $color-white;
         font-weight: 500;
+        border-radius: 3px;
         border: none;
         padding: 1rem;
         outline: none;
+        cursor: pointer;
+    }
+
+    &__search {
+        height: 5rem;
+        background-color: $color-white;
+        border: 3px solid $color-ascent;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 2rem 0;
+        border-radius: .5rem;
+        position: absolute;
+        bottom: -2.6rem;
+        width: 100%;
+        max-width: $container-max-width;
+    }
+
+    &__search-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__input {
+        border: none;
+        outline: none;
+        font-size: $font-default;
+    }
+
+    &__icon {
+        color: $color-gray-light;
+    }
+
+    &__search-text {
+        color: $color-gray-light;
         cursor: pointer;
     }
 }
