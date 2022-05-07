@@ -1,0 +1,35 @@
+.mailList {
+    width: 100%;
+    margin-top: 5rem;
+    background-color: $color-primary;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem;
+
+    &__input-container {
+
+        input {
+            width: 30rem;
+            height: 4rem;
+            padding: 1rem;
+            border: none;
+            outline: none;
+            margin-right: 1rem;
+            border-radius: 5px;
+        }
+
+        button {
+            height: 4rem;
+            background-color: $color-primary-light;
+            color: $color-white;
+            border-radius: 5px;
+            padding: 0 1rem;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+}
