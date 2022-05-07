@@ -7,4 +7,9 @@
         align-items: center;
         gap: 3rem;
     }
+
+    &__title {
+        width: $container-max-width;
+        font-size: 2rem;
+    }
 }

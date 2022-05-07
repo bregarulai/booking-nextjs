@@ -91,16 +91,19 @@
     &__date {
         position: absolute;
         top: 4.7rem;
+        z-index: 2;
     }
 
     &__options {
         position: absolute;
         top: 4.7rem;
+        right: 13rem;
         background-color: $color-white;
         color: $color-gray-normal;
         border-radius: .5rem;
         -webkit-box-shadow: $box-shawdow-primary;
         box-shadow: $box-shawdow-primary;
+        z-index: 2;
     }
 
     &__options-item {
