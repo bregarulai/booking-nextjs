@@ -47,7 +47,9 @@ const Footer = () => {
           <li className='footer__list-item'>Terms and conditions</li>
         </ul>
       </div>
-      <div className='footer__text'>Copyright © 2022 BregaBooking.</div>
+      <div className='footer__text'>
+        <span>Copyright © 2022 BregaBooking.</span>
+      </div>
     </div>
   );
 };

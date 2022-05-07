@@ -1,0 +1,24 @@
+.footer {
+    width: 100%;
+    max-width: $container-max-width;
+    font-size: $font-footer;
+
+    &__lists {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+    }
+
+    &__list-item {
+        margin-bottom: 1rem;
+        color: $color-primary;
+        cursor: pointer;
+    }
+
+    &__text {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+}
