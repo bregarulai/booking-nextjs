@@ -13,6 +13,7 @@ import { format } from 'date-fns';
 
 const Header = () => {
   const [showCalendar, setShowCalendar] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -20,6 +21,11 @@ const Header = () => {
       key: 'selection',
     },
   ]);
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    room: 1,
+  });
   return (
     <div className='header'>
       <div className='header__container'>
@@ -86,9 +92,34 @@ const Header = () => {
           </div>
           <div className='header__search-item'>
             <FontAwesomeIcon icon={faPerson} className='header__icon' />
-            <span className='header__search-text'>
-              2 adults 2 children 1 room
+            <span
+              className='header__search-text'
+              onClick={() => setShowOptions(!showOptions)}
+            >
+              {`${options.adult} adults · ${options.children} children · ${options.room} room`}
             </span>
+            {showOptions && (
+              <div className='header__options'>
+                <div className='header__options-item'>
+                  <span className='header__option-text'>Adult</span>
+                  <button className='header__option-button'>-</button>
+                  <span className='header__option-counter'>0</span>
+                  <button className='header__option-button'>+</button>
+                </div>
+                <div className='header__options-item'>
+                  <span className='header__option-text'>Children</span>
+                  <button className='header__option-button'>-</button>
+                  <span className='header__option-counter'>0</span>
+                  <button className='header__option-button'>+</button>
+                </div>
+                <div className='header__options-item'>
+                  <span className='header__option-text'>Room</span>
+                  <button className='header__option-button'>-</button>
+                  <span className='header__option-counter'>0</span>
+                  <button className='header__option-button'>+</button>
+                </div>
+              </div>
+            )}
           </div>
           <div className='header__search-item'>
             <button className='header__button'>Search</button>
