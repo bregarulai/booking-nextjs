@@ -13,10 +13,11 @@
     &__search {
         flex: 1;
         background-color: $color-ascent;
-        padding: 1rem;
+        padding: 2rem;
         border-radius: 1rem;
         position: sticky;
         top: 1rem;
+        height: max-content;
 
         &>button {
             padding: 1rem;
