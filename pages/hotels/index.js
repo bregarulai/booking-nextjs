@@ -8,9 +8,7 @@ import { Navbar, Header } from '../../components';
 const Hotels = () => {
   const router = useRouter();
   const { query } = router;
-  console.log('query data', query);
   const [openDate, setOpenDate] = useState(false);
-  const [openOptions, setOpenOptions] = useState(false);
   const [destination, setDestination] = useState(query.destination);
   const [date, setDate] = useState([
     {
@@ -57,10 +55,7 @@ const Hotels = () => {
             </div>
             <div className='hotels__search-item'>
               <label htmlFor=''>Check-in Date</label>
-              <span
-                // className='header__search-text'
-                onClick={() => setOpenDate(!openDate)}
-              >
+              <span onClick={() => setOpenDate(!openDate)}>
                 {`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(
                   date[0].endDate,
                   'MM/dd/yyyy'
