@@ -10,8 +10,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
+import { useRouter } from 'next/router';
 
 const Header = ({ type }) => {
+  const [destination, setDestination] = useState('');
   const [showCalendar, setShowCalendar] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [date, setDate] = useState([
@@ -27,6 +29,8 @@ const Header = ({ type }) => {
     room: 1,
   });
 
+  const router = useRouter();
+
   const handleOption = (option, operation) => {
     setOptions((prevOptions) => {
       return {
@@ -35,6 +39,23 @@ const Header = ({ type }) => {
           operation === 'inc' ? options[option] + 1 : options[option] - 1,
       };
     });
+  };
+
+  const handleSearch = () => {
+    router.push(
+      {
+        pathname: '/hotels',
+        query: {
+          destination,
+          endDate: format(date[0].endDate, 'MM/dd/yyyy'),
+          startDate: format(date[0].startDate, 'MM/dd/yyyy'),
+          adult: options.adult,
+          children: options.children,
+          room: options.room,
+        },
+      },
+      '/hotels'
+    );
   };
 
   return (
@@ -85,6 +106,7 @@ const Header = ({ type }) => {
                   type='text'
                   placeholder='Where are you going?'
                   className='header__input'
+                  onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
               <div className='header__search-item'>
@@ -188,7 +210,9 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className='header__search-item'>
-                <button className='header__button'>Search</button>
+                <button className='header__button' onClick={handleSearch}>
+                  Search
+                </button>
               </div>
             </div>
           </>
