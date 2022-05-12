@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { format } from 'date-fns';
 import { DateRange } from 'react-date-range';
 
-import { Navbar, Header } from '../../components';
+import { Navbar, Header, SearchItem } from '../../components';
 
 const Hotels = () => {
   const router = useRouter();
@@ -123,7 +123,17 @@ const Hotels = () => {
             </div>
             <button>Search</button>
           </div>
-          <div className='hotels__result'></div>
+          <div className='hotels__result'>
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+          </div>
         </div>
       </div>
     </div>
