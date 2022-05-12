@@ -2,7 +2,7 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-import { Navbar, Header } from '../../components';
+import { Navbar, Header, MailList, Footer } from '../../components';
 
 const Hotel = () => {
   const photos = [
@@ -80,6 +80,8 @@ const Hotel = () => {
             </div>
           </div>
         </div>
+        <MailList />
+        <Footer />
       </div>
     </div>
   );

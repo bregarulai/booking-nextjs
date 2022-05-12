@@ -2,7 +2,8 @@
 
     &__container {
         display: flex;
-        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         margin-top: 2rem;
     }
 
@@ -64,5 +65,54 @@
     &__img {
         width: 100%;
         object-fit: cover;
+    }
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    &__detail-texts {
+        flex: 3;
+    }
+
+    &__description {
+        font-size: $font-small;
+        margin-top: 2rem;
+    }
+
+    &__detail-price {
+        flex: 1;
+        background-color: $color-blue-light;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &>h1 {
+            font-size: 1.8rem;
+            color: $color-gray-normal-dark;
+        }
+
+        &>span {
+            font-size: $font-small;
+        }
+
+        &>h2 {
+            font-weight: 300;
+        }
+
+        &>button {
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding: 1rem 2rem;
+            background-color: $color-primary-light;
+            color: $color-white;
+            font-weight: bold;
+            cursor: pointer;
+        }
     }
 }
