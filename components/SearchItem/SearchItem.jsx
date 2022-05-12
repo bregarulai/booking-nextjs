@@ -11,19 +11,29 @@ const SearchItem = () => {
       <div className='searchItem__description'>
         <h1 className='searchItem__title'>Tower Street Apartments</h1>
         <span className='searchItem__distance'>500m from center</span>
-        <span className='searchItem__taxiOp'>Free airport taxi</span>
+        <span className='searchItem__tax-i-op'>Free airport taxi</span>
         <span className='searchItem__subtitle'>
           Studio Apartment with Air conditioning
         </span>
         <span className='searchItem__features'>
           Entire studio • 1 bathroom • 21m² 1 full bed
         </span>
-        <span className='searchItem__cancelOp'>Free cancellation </span>
-        <span className='searchItem__cancelOpSubtitle'>
+        <span className='searchItem__cancel-op'>Free cancellation </span>
+        <span className='searchItem__cancel-op-subtitle'>
           You can cancel later, so lock in this great price today!
         </span>
       </div>
-      <div className='searchItem__details'>Details</div>
+      <div className='searchItem__details'>
+        <div className='searchItem__rating'>
+          <span>Excellent</span>
+          <button>8.9</button>
+        </div>
+        <div className='searchItem__detail-texts'>
+          <span className='searchItem__price'>$109</span>
+          <span className='searchItem__tax-op'>Includes taxes and fees</span>
+          <button className='searchItem__check-button'>See availability</button>
+        </div>
+      </div>
     </div>
   );
 };
