@@ -1,0 +1,64 @@
+.searchItem {
+    border: 1px solid $color-gray-light;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    &__img {
+        width: 20rem;
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+        flex: 2;
+    }
+
+    &__title {
+        font-size: 2rem;
+        color: $color-primary-light;
+    }
+
+    &__distance {
+        font-size: $font-footer;
+    }
+
+    &__taxiOp {
+        font-size: $font-footer;
+        background-color: $color-success;
+        color: $color-white;
+        width: max-content;
+        padding: .3rem;
+        border-radius: 5px;
+    }
+
+    &__subtitle {
+        font-size: $font-footer;
+        font-weight: bold;
+    }
+
+    &__features {
+        font-size: $font-footer;
+    }
+
+    &__cancelOp {
+        font-size: $font-footer;
+        color: $color-success;
+        font-weight: bold;
+    }
+
+    &__cancelOpSubtitle {
+        font-size: $font-footer;
+        color: $color-success;
+    }
+
+    &__details {
+        flex: 1;
+    }
+}
