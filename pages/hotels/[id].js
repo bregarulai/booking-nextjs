@@ -1,10 +1,22 @@
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircleArrowLeft,
+  faCircleArrowRight,
+  faCircleXmark,
+  faLocationDot,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Navbar, Header, MailList, Footer } from '../../components';
 
 const Hotel = () => {
+  const [slideNumber, setSlideNumber] = useState(0);
+  const [openSlider, setOpenSlider] = useState(false);
+
+  const handleOpenSlider = (index) => {
+    setSlideNumber(index);
+    setOpenSlider(true);
+  };
   const photos = [
     {
       src: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1',
@@ -30,6 +42,20 @@ const Hotel = () => {
       <Navbar />
       <Header type='hotels' />
       <div className='hotel__container'>
+        {openSlider && (
+          <div className='hotel__slider'>
+            <FontAwesomeIcon icon={faCircleXmark} />
+            <FontAwesomeIcon icon={faCircleArrowLeft} />
+            <div className='hotel__slider-wrapper'>
+              <img
+                src={photos[slideNumber].src}
+                alt='hotel'
+                className='hotel__slider-img'
+              />
+            </div>
+            <FontAwesomeIcon icon={faCircleArrowRight} />
+          </div>
+        )}
         <div className='hotel__wrapper'>
           <button className='hotel__book-now'>Reserve or Book Now!</button>
           <h1 className='hotel__title'>Grand Hotel</h1>
@@ -46,7 +72,12 @@ const Hotel = () => {
           <div className='hotel__images'>
             {photos.map((item, index) => (
               <div key={`hotel-${index}`} className='hotel__img-wrapper'>
-                <img src={item.src} alt='hotel' className='hotel__img' />
+                <img
+                  onClick={() => handleOpenSlider(index)}
+                  src={item.src}
+                  alt='hotel'
+                  className='hotel__img'
+                />
               </div>
             ))}
           </div>
