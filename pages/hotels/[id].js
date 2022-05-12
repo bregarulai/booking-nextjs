@@ -17,6 +17,17 @@ const Hotel = () => {
     setSlideNumber(index);
     setOpenSlider(true);
   };
+
+  const handleSlide = (direction) => {
+    let newSlideNumber;
+    if (direction === 'left') {
+      newSlideNumber = slideNumber === 0 ? 5 : slideNumber - 1;
+    } else {
+      newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
+    }
+
+    setSlideNumber(newSlideNumber);
+  };
   const photos = [
     {
       src: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1',
@@ -44,8 +55,16 @@ const Hotel = () => {
       <div className='hotel__container'>
         {openSlider && (
           <div className='hotel__slider'>
-            <FontAwesomeIcon icon={faCircleXmark} />
-            <FontAwesomeIcon icon={faCircleArrowLeft} />
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              className='hotel__close'
+              onClick={() => setOpenSlider(false)}
+            />
+            <FontAwesomeIcon
+              onClick={() => handleSlide('left')}
+              icon={faCircleArrowLeft}
+              className='hotel__arrow'
+            />
             <div className='hotel__slider-wrapper'>
               <img
                 src={photos[slideNumber].src}
@@ -53,7 +72,11 @@ const Hotel = () => {
                 className='hotel__slider-img'
               />
             </div>
-            <FontAwesomeIcon icon={faCircleArrowRight} />
+            <FontAwesomeIcon
+              onClick={() => handleSlide('right')}
+              icon={faCircleArrowRight}
+              className='hotel__arrow'
+            />
           </div>
         )}
         <div className='hotel__wrapper'>
