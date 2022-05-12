@@ -78,46 +78,55 @@ const Hotels = () => {
             </div>
             <div className='hotels__search-item'>
               <label htmlFor=''>Options</label>
-              <div className='hotels__search-options-item'>
-                <span className='hotels__search-options-text'>
-                  Min Price <small> per night</small>
-                </span>
-                <input type='number' className='hotels__search-options-input' />
-              </div>
-              <div className='hotels__search-options-item'>
-                <span className='hotels__search-options-text'>
-                  Max Price <small> per night</small>
-                </span>
-                <input type='number' className='hotels__search-options-input' />
-              </div>
-              <div className='hotels__search-options-item'>
-                <span className='hotels__search-options-text'>Adult</span>
-                <input
-                  type='number'
-                  min={1}
-                  className='hotels__search-options-input'
-                  placeholder={options.adult}
-                />
-              </div>
-              <div className='hotels__search-options-item'>
-                <span className='hotels__search-options-text'>Children</span>
-                <input
-                  type='number'
-                  min={0}
-                  className='hotels__search-options-input'
-                  placeholder={options.children}
-                />
-              </div>
-              <div className='hotels__search-options-item'>
-                <span className='hotels__search-options-text'>Room</span>
-                <input
-                  type='number'
-                  min={1}
-                  className='hotels__search-options-input'
-                  placeholder={options.room}
-                />
+              <div className='hotels__search-options'>
+                <div className='hotels__search-options-item'>
+                  <span className='hotels__search-options-text'>
+                    Min Price <small> per night</small>
+                  </span>
+                  <input
+                    type='number'
+                    className='hotels__search-options-input'
+                  />
+                </div>
+                <div className='hotels__search-options-item'>
+                  <span className='hotels__search-options-text'>
+                    Max Price <small> per night</small>
+                  </span>
+                  <input
+                    type='number'
+                    className='hotels__search-options-input'
+                  />
+                </div>
+                <div className='hotels__search-options-item'>
+                  <span className='hotels__search-options-text'>Adult</span>
+                  <input
+                    type='number'
+                    min={1}
+                    className='hotels__search-options-input'
+                    placeholder={options.adult}
+                  />
+                </div>
+                <div className='hotels__search-options-item'>
+                  <span className='hotels__search-options-text'>Children</span>
+                  <input
+                    type='number'
+                    min={0}
+                    className='hotels__search-options-input'
+                    placeholder={options.children}
+                  />
+                </div>
+                <div className='hotels__search-options-item'>
+                  <span className='hotels__search-options-text'>Room</span>
+                  <input
+                    type='number'
+                    min={1}
+                    className='hotels__search-options-input'
+                    placeholder={options.room}
+                  />
+                </div>
               </div>
             </div>
+            <button>Search</button>
           </div>
           <div className='hotels__result'></div>
         </div>

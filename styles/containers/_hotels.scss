@@ -52,6 +52,22 @@
         }
     }
 
+    &__search-options {
+        padding: 1rem;
+    }
+
+    &__search-options-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        color: $color-gray-normal-dark;
+        font-size: $font-footer;
+    }
+
+    &__search-options-input {
+        width: 5rem;
+    }
+
     &__result {
         flex: 3;
     }
