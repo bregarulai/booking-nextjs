@@ -7,6 +7,11 @@ const Hotels = () => {
     <div>
       <Navbar />
       <Header type='hotels' />
+      <div className='hotels'>
+        <div className='hotels__wrapper'>
+          <div className='hotels__search'></div>
+        </div>
+      </div>
     </div>
   );
 };
