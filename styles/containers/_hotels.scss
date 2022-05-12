@@ -25,6 +25,33 @@
         margin-bottom: 1rem;
     }
 
+    &__search-item {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-bottom: 1rem;
+
+        &>label {
+            font-size: $font-footer;
+        }
+
+        &>input {
+            height: 3rem;
+            padding: .5rem;
+            border: none;
+            outline: none;
+        }
+
+        &>span {
+            height: 3rem;
+            padding: .5rem;
+            background-color: $color-white;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+
     &__result {
         flex: 3;
     }

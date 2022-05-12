@@ -53,8 +53,8 @@ const Header = ({ type }) => {
           children: options.children,
           room: options.room,
         },
-      },
-      '/hotels'
+      }
+      // '/hotels'
     );
   };
 
@@ -127,6 +127,7 @@ const Header = ({ type }) => {
                   <DateRange
                     editableDateInputs={true}
                     onChange={(item) => setDate([item.selection])}
+                    minDate={new Date()}
                     moveRangeOnFirstSelection={false}
                     ranges={date}
                     className='header__date'
