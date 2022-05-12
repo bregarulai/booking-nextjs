@@ -17,6 +17,18 @@
         border-radius: 1rem;
         position: sticky;
         top: 1rem;
+
+        &>button {
+            padding: 1rem;
+            background-color: $color-primary-light;
+            color: $color-white;
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            width: 100%;
+            font-weight: 500;
+            cursor: pointer;
+        }
     }
 
     &__title {
@@ -40,11 +52,13 @@
             padding: .5rem;
             border: none;
             outline: none;
+            border-radius: 3px;
         }
 
         &>span {
             height: 3rem;
             padding: .5rem;
+            border-radius: 3px;
             background-color: $color-white;
             display: flex;
             align-items: center;
@@ -66,6 +80,10 @@
 
     &__search-options-input {
         width: 5rem;
+        padding: .5rem;
+        border: none;
+        outline: none;
+        border-radius: 3px;
     }
 
     &__result {
