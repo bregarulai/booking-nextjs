@@ -9,17 +9,28 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const hotels = await Hotel.find();
-        res.status(200).json(hotels);
+        const hotel = await Hotel.findById(req.query.id);
+        res.status(200).json(hotel);
       } catch (error) {
         res.status(400).json({ success: false, message: error.message });
       }
       break;
-    case 'POST':
-      const newHotel = new Hotel(req.body);
+    case 'PUT':
       try {
-        const savedHotel = await newHotel.save();
-        res.status(201).json(savedHotel);
+        const updatedHotel = await Hotel.findByIdAndUpdate(
+          req.query.id,
+          { $set: req.body },
+          { new: true }
+        );
+        res.status(200).json(updatedHotel);
+      } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+      }
+      break;
+    case 'DELETE':
+      try {
+        await Hotel.findByIdAndDelete(req.query.id);
+        res.status(200).json(`Hotel ${req.query.id} has been deleted`);
       } catch (error) {
         res.status(400).json({ success: false, message: error.message });
       }
